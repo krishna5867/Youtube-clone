@@ -3,6 +3,14 @@ import { Context } from "../context/ContextApi";
 import SideFeed from './SideFeed'
 import VideoCards from './VideoCards';
 
+import { BiAlignLeft } from "react-icons/bi";
+import { SlArrowDown } from "react-icons/sl";
+import { SlMenu } from "react-icons/sl";
+import { IoIosSearch } from "react-icons/io";
+import { RiVideoAddLine } from "react-icons/ri";
+import { FiBell } from "react-icons/fi";
+import { CgClose } from "react-icons/cg";
+
 const Feed = () => {
     const {search, loading} = useContext(Context);
 return (
@@ -12,7 +20,7 @@ return (
             <SideFeed />
         </div> */}
         {/* <div className='w-10/12 border flex flex-wrap justify-between'> */}
-        <div className='flex flex-wrap justify-between px-2 mt-1'>
+        <div className='flex flex-wrap gap-6 justify-center px-2 mt-1'>
         {!loading &&
                         search.map((item) => {
                             if (item.type !== "video") return false;
