@@ -6,13 +6,13 @@ import { abbreviateNumber } from "js-abbreviation-number";
 const SearchVideos = ({ video }) => {
     return (
     <>
-    <div className="flex flex-row px-6 mt-2">
-        <div style={{ width: "300px" }} className="mb-6">
+    <div className="sm:flex px-6 sm:mt-2 mt-6 w-full">
+        <div className="sm:mb-6 md:w-4/12 sm:w-8/12">
             <Link to={`/video/${video?.videoId}`}>
-            <img className='rounded' src={video?.thumbnails[0]?.url} alt="thumnail" />
+            <img className='rounded-xl w-full' src={video?.thumbnails[0]?.url} alt="thumnail" />
             </Link>
         </div>
-        <div className="ml-4">
+        <div className="sm:ml-4 sm:w-8/12">
                 <div className="text-xl font-semibold">{video?.title}</div>
             <div className="flex items-center">
             <div className="w-10 h-10 rounded-full overflow-hidden mt-2 mr-2">

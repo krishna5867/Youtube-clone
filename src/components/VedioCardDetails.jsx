@@ -43,8 +43,8 @@ const VedioCardDetails = () => {
 
   return (
     <>
-      <div className="flex h-screen gap-12">
-        <div className="w-3/6 h-4/6 mt-4 ml-[120px]">
+      <div className="md:flex h-screen gap-12">
+        <div className="lg:w-3/6 lg:h-4/6 sm:w-4/6 w-full h-1/2 mt-4 md:mb-0 mb-36 lg:ml-[120px] lg:px-0 px-6">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${id}`}
             controls
@@ -77,7 +77,7 @@ const VedioCardDetails = () => {
         </div>
 
         {/* Related */}
-        <div className="w-2/6 mt-4 overflow-y-auto">
+        <div className="md:w-2/6 md:px-0 px-6 mt-4 overflow-y-auto">
         {related?.contents?.map((item, index) => {
                         if (item?.type !== "video") return false;
                         return (

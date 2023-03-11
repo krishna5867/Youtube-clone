@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const VideoCards = ({ video }) => {
   return (
-    <div>
+    <div className="">
       <div style={{ width: "340px" }}  className="mb-6">
         <Link to={`/video/${video?.videoId}`}>
           <img className="rounded-xl" src={video?.thumbnails[0]?.url} alt="thumnail" />

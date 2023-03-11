@@ -20,8 +20,8 @@ const Header = () => {
     }
 return (
     <>
-<div className="sticky top-0 w-full flex justify-between bg-black text-center items-center px-12 text-white h-16">
-    <div className='w-1/12'><Link to='/'><img src={YtLogo} alt=""/></Link></div>
+<div className="sticky top-0 w-full flex justify-between bg-black text-center items-center md:px-12 px-6 text-white h-16">
+    <div className='md:w-1/12 sm:w-2/12 w-3/12'><Link to='/'><img src={YtLogo} alt=""/></Link></div>
     <div className='w-6/12 relative'>
     <input 
     type="text"
@@ -33,11 +33,13 @@ return (
     <div className='absolute right-0 top-0 mt-1 mr-3 text-2xl text-black'><IoIosSearch /></div>
 </div>
 
-    <div className='flex justify-between w-1/12'>
-        <RiVideoAddLine className='text-3xl'/>
-        <FiBell className='text-3xl'/>
-    <div className='h-8 w-8 rounded-full overflow-hidden bg-slate-300'>
-        <img src={Dp} alt=""  />
+    <div className='flex justify-between items-center'>
+        <div className="hidden md:flex">
+            <div className="mr-4"><RiVideoAddLine className='text-3xl'/></div>
+            <div className="mr-4"><FiBell className='text-3xl'/></div>
+        </div>
+    <div className='h-10 w-10 rounded-full overflow-hidden'>
+        <img src={Dp} alt="" className='rounded-ful'  />
     </div>
     </div>
 

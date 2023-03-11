@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 const RelatedVideos = ({video}) => {
     return (
     <>
-        <div className="flex">
-            <div className='mb-6 w-1/2'>
+        <div className="lg:flex md:gap-2 gap-8 md:mt-0 lg:mb-0 mb-6 w-full">
+            <div className='lg:mb-8 mb-2'>
                 <Link to={`/video/${video?.videoId}`}>
-                <img src={video?.thumbnails[0]?.url} alt="thumnail" style={{width:'240px'}}/>
+                <img src={video?.thumbnails[0]?.url} alt="thumnail" className='w-full rounded-xl'/>
                 </Link>
             </div>
-            <div className='w-1/2 overflow-hidden'>
+
+            <div className='overflow-hidden md:w-full'>
                 <div className="text-xl font-semibold">{video?.title}</div>
                     <div className="flex">
                     <span>{video?.author?.title}</span>
