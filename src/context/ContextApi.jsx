@@ -7,7 +7,6 @@ export const ContextApp = ({children}) => {
     const [loading, setLoading] = useState(false);
     const [category, setCategory] = useState("NEW");
     const [search, setSearch] = useState([]);
-    const [mobile, setMobile] = useState(false);
 
     // console.log(search);
 
@@ -23,7 +22,7 @@ export const ContextApp = ({children}) => {
     },[category])
 
     return(
-        <Context.Provider value={{loading, setLoading,category,setCategory,search,setSearch,mobile,setMobile}}>
+        <Context.Provider value={{loading, setLoading,category,setCategory,search,setSearch}}>
         {children}
     </Context.Provider>
     )

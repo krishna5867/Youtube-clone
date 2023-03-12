@@ -2,15 +2,19 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import YtLogo from '../images/yt-logo.png'
+import YtLogo2 from '../images/yt-logo-mobile.png'
 import Dp from '../images/kk.png'
 import { RiVideoAddLine } from "react-icons/ri";
 import { FiBell } from "react-icons/fi";
 import { IoIosSearch } from "react-icons/io";
-
+import { SlMenu } from "react-icons/sl";
+import { Context } from '../context/ContextApi';
+import Loader from './Loader';
 
 const Header = () => {
     const [input, setInput] = useState();
     const navigate = useNavigate();
+    const {loading} = useState(Context);
 
     const handleInput = (e) => {
         if((e.key === "Enter") && input?.length > 0){
@@ -20,8 +24,14 @@ const Header = () => {
     }
 return (
     <>
-<div className="sticky top-0 w-full flex justify-between bg-black text-center items-center md:px-12 px-6 text-white h-16">
-    <div className='md:w-1/12 sm:w-2/12 w-3/12'><Link to='/'><img src={YtLogo} alt=""/></Link></div>
+<div className="sticky top-0 w-full flex justify-between bg-black text-center items-center px-4 text-white h-16">
+    {loading && <Loader />}
+    <div className="flex items-center md:w-2/12 w-3/12">
+    <div className='md:text-3xl text-2xl md:hiddend flex'><SlMenu /></div>
+    {/* <div className=''><YtLogo2 /></div> */}
+    <div className='ml-4'><Link to='/'><img src={YtLogo}className='md:w-32' alt=""/></Link></div>
+    
+    </div>
     <div className='w-6/12 relative'>
     <input 
     type="text"
