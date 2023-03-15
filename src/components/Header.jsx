@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import YtLogo from '../images/yt-logo.png'
@@ -14,7 +14,7 @@ import Loader from './Loader';
 const Header = () => {
     const [input, setInput] = useState();
     const navigate = useNavigate();
-    const {loading} = useState(Context);
+    const {loading, setMobile, mobile} = useContext(Context);
 
     const handleInput = (e) => {
         if((e.key === "Enter") && input?.length > 0){
@@ -22,12 +22,15 @@ const Header = () => {
         }
 
     }
+    const handleMobileMenu = () => {
+        setMobile(!mobile)
+    }
 return (
     <>
-<div className="sticky top-0 w-full flex justify-between bg-black text-center items-center px-4 text-white h-16">
     {loading && <Loader />}
+<div className="sticky top-0 w-full flex justify-between bg-black text-center items-center px-2 text-white h-16">
     <div className="flex items-center md:w-2/12 w-3/12">
-    <div className='md:text-3xl text-2xl md:hiddend flex'><SlMenu /></div>
+    <div className='md:text-3xl text-2xl md:hiddend flex' onClick={handleMobileMenu}><SlMenu /></div>
     {/* <div className=''><YtLogo2 /></div> */}
     <div className='ml-4'><Link to='/'><img src={YtLogo}className='md:w-32' alt=""/></Link></div>
     

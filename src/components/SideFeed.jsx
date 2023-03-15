@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, { useContext } from "react";
 import { Context } from "../context/ContextApi";
 import { categories } from '../utils/Menu'
 import { useNavigate } from "react-router-dom";
@@ -28,9 +28,9 @@ const SideFeed = () => {
     return (
       <>
         <div key={item.name}>
-          <div className="flex gap-4 cursor-pointer hover:bg-gray-200 p-2" onClick={()=>{handleClickMenu(item.name, item.type); navigate('/')}}>  
-            <div className="text-3xl">{item.icon}</div>
-            <div className="text-2xl font-semibold">{item.type === "home" ? "Home" : item.name}</div> 
+          <div className="flex gap-2 cursor-pointer hover:bg-gray-200 p-2" onClick={()=>{handleClickMenu(item.name, item.type); navigate('/')}}>  
+            <div className="text-xl">{item.icon}</div>
+            <div className="font-semibold">{item.type === "home" ? "Home" : item.name}</div> 
           </div>
         </div>
       </>

@@ -4,12 +4,14 @@ import SideFeed from './SideFeed'
 import VideoCards from './VideoCards';
 
 const Feed = () => {
-    const {search, loading} = useContext(Context);
+    const {search, loading, mobile} = useContext(Context);
 return (
     <>
     <div className='w-full flex'>
-        <div className='w-2/12 md:block hidden'>
-            <SideFeed />
+        <div className='w-2/12'>
+            {(mobile === true) ? 
+            <SideFeed /> 
+        : ""}
         </div>
         <div className='md:flex flex-wrap gap-6 justify-center mx-auto px-2 mt-1'>
         {!loading && search.map((item) => {
