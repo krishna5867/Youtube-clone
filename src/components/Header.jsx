@@ -22,6 +22,7 @@ const Header = () => {
         }
 
     }
+    
     const handleMobileMenu = () => {
         setMobile(!mobile)
     }

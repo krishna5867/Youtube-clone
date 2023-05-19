@@ -14,11 +14,12 @@ const Search = () => {
         setLoading(true)
         fetchSerchData()
         setLoading(false)
-    },[])
+    },[query])
 
     const fetchSerchData = () => {
         setLoading(true);
-        fetchApi(`search/?q=${query}`).then((data)=> {
+        fetchApi(`search/?q=${query}`)
+        .then((data)=> {
             console.log(`search-contents-> ${data?.contents}`);
             setSearchVideo(data?.contents)
             setLoading(false)
